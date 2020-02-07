@@ -1,0 +1,4 @@
+{% include '@SyliusUi/_javascripts.html.twig' with {'path': 'bundles/monsieurbizsyliusadminbetterloginplugin/assets/admin/js/mbiz-admin-better-login.js'} %}
+<script>window.mbizAdminBetterLogin.run({{ monsieurbiz_admin_better_login_get_tags() | json_encode | raw }});</script>
+
+<a href="#" onclick="return window.mbizAdminBetterLogin.refresh();" style="padding-left:10px;color:black;text-shadow:0px 0px 5px #fff;">⟲</a>
