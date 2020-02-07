@@ -1,0 +1,4 @@
+suites:
+    main:
+        namespace: MonsieurBiz\SyliusAdminBetterLoginPlugin
+        psr4_prefix: MonsieurBiz\SyliusAdminBetterLoginPlugin
