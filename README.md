@@ -29,8 +29,18 @@ Thank you to all the authors.
 composer require monsieurbiz/sylius-admin-better-login-plugin
 ```
 
+Then you have to declare it in your `config/bundles.php`:
+
+```php
+<?php
+return [
+    // …
+    MonsieurBiz\SyliusAdminBetterLoginPlugin\MonsieurBizSyliusAdminBetterLoginPlugin::class => ['all' => true],
+];
+```
+
 You can copy the template of the login page as well, it's optional.  
-We strongly suggest it otherwise you won't be able to really enjoy the background 🙃.
+But we strongly suggest it, otherwise you won't be able to really enjoy the background 🙃.
 
 ```bash
 mkdir -p templates/bundles/
