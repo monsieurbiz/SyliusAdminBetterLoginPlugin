@@ -11,7 +11,7 @@
 <h1 align="center">Admin Better Login</h1>
 
 [![Admin Better Login Plugin license](https://img.shields.io/github/license/monsieurbiz/SyliusAdminBetterLoginPlugin)](https://github.com/monsieurbiz/SyliusAdminBetterLoginPlugin/blob/master/LICENSE.txt)
-[![Build Status](https://travis-ci.com/monsieurbiz/SyliusAdminBetterLoginPlugin.svg?branch=master)](https://travis-ci.com/monsieurbiz/SyliusAdminBetterLoginPlugin)
+[![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/monsieurbiz/SyliusAdminBetterLoginPlugin/Tests/master)](https://github.com/monsieurbiz/SyliusAdminBetterLoginPlugin/actions?query=workflow%3ATests+branch%3Amaster)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/monsieurbiz/SyliusAdminBetterLoginPlugin/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/monsieurbiz/SyliusAdminBetterLoginPlugin/?branch=master)
 
 
