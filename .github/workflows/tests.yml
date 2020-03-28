@@ -5,8 +5,6 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-  schedule:
-    - cron:  '0 0 * * *'
 
 jobs:
 
@@ -94,7 +92,7 @@ jobs:
       - name: Run standalone symfony flex server
         run: |
           echo ${{ github.token }} | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
-          docker run --rm --name flex -d -v $PWD/plugin/recipe:/var/www/flex/var/repo/private/monsieurbiz/sylius-alert-message-plugin -p 80:80 docker.pkg.github.com/monsieurbiz/docker/symfony-flex-server:latest contrib official
+          docker run --rm --name flex -d -v $PWD/plugin/recipe:/var/www/flex/var/repo/private/monsieurbiz/sylius-admin-better-login-plugin -p 80:80 docker.pkg.github.com/monsieurbiz/docker/symfony-flex-server:latest contrib official
           docker ps
 
       - uses: actions/cache@v1
