@@ -38,7 +38,7 @@ jobs:
           key: composer-php.${{ matrix.php }}-prefer.${{ matrix.prefer }}-${{ github.sha }}
           restore-keys: composer-php.${{ matrix.php }}-prefer.${{ matrix.prefer }}-
 
-      - run: mkdir -p /home/runner/.composer/cache
+      - run: mkdir -p /home/runner/{.composer/cache,.config/composer}
         if: steps.cache-composer.outputs.cache-hit != 'true'
 
       - name: Update composer
@@ -112,7 +112,7 @@ jobs:
           key: composer-php.${{ matrix.php }}-sylius.${{ matrix.sylius }}.0-${{ github.sha }}
           restore-keys: composer-php.${{ matrix.php }}-sylius.${{ matrix.sylius }}.0-
 
-      - run: mkdir -p /home/runner/.composer/cache
+      - run: mkdir -p /home/runner/{.composer/cache,.config/composer}
         if: steps.cache-composer.outputs.cache-hit != 'true'
 
       - name: Update composer
