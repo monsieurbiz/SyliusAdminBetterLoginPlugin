@@ -24,7 +24,7 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 final class MonsieurBizSyliusAdminBetterLoginExtension extends Extension
 {
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function load(array $config, ContainerBuilder $container): void
     {
