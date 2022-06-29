@@ -7,13 +7,12 @@ parameters:
     paths:
         - %rootDir%/src/
 
+    checkMissingIterableValueType: false
+
     excludes_analyse:
         # Makes PHPStan crash
         - 'src/DependencyInjection/Configuration.php'
+        - 'src/DependencyInjection/MonsieurBizSyliusAdminBetterLoginExtension.php'
 
         # Test dependencies
-        - 'tests/Application/app/**.php'
-        - 'tests/Application/src/**.php'
-
-    ignoreErrors:
-        - '/Method MonsieurBiz\SyliusAdminBetterLoginPlugin\MonsieurBizSyliusAdminBetterLoginPlugin::getContainerExtension() should return Symfony\Component\DependencyInjection\Extension\ExtensionInterface|null but returns Symfony\Component\DependencyInjection\Extension\ExtensionInterface|true|null./'
+        - 'tests/Application/**/*'

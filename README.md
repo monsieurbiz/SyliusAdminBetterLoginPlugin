@@ -12,9 +12,9 @@
 
 <h1 align="center">Admin Better Login</h1>
 
-[![Admin Better Login Plugin license](https://img.shields.io/github/license/monsieurbiz/SyliusAdminBetterLoginPlugin)](https://github.com/monsieurbiz/SyliusAdminBetterLoginPlugin/blob/master/LICENSE.txt)
-[![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/monsieurbiz/SyliusAdminBetterLoginPlugin/Tests/master)](https://github.com/monsieurbiz/SyliusAdminBetterLoginPlugin/actions?query=workflow%3ATests+branch%3Amaster)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/monsieurbiz/SyliusAdminBetterLoginPlugin/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/monsieurbiz/SyliusAdminBetterLoginPlugin/?branch=master)
+[![Anti Admin Better Login license](https://img.shields.io/github/license/monsieurbiz/SyliusAdminBetterLoginPlugin?public)](https://github.com/monsieurbiz/SyliusAdminBetterLoginPlugin/blob/master/LICENSE.txt)
+[![Tests Status](https://img.shields.io/github/workflow/status/monsieurbiz/SyliusAdminBetterLoginPlugin/Tests?logo=github)](https://github.com/monsieurbiz/SyliusAdminBetterLoginPlugin/actions?query=workflow%3ATests)
+[![Security Status](https://img.shields.io/github/workflow/status/monsieurbiz/SyliusAdminBetterLoginPlugin/Security?label=security&logo=github)](https://github.com/monsieurbiz/SyliusAdminBetterLoginPlugin/actions?query=workflow%3ASecurity)
 
 
 This plugin changes the way you log to your admin panel by adding a beautiful background
