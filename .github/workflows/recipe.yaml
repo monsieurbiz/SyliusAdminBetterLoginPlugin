@@ -18,12 +18,14 @@ jobs:
       fail-fast: false
       matrix:
         php: ['7.4' ,'8.0']
-        sylius: ["~1.8.0", "~1.9.0", "~1.10.0"]
+        sylius: ["~1.8.0", "~1.9.0", "~1.10.0", "~1.11.0"]
         exclude:
           - php: 8.0
             sylius: "~1.8.0"
           - php: 8.0
             sylius: "~1.9.0"
+          - php: 7.4
+            sylius: "~1.11.0"
 
     steps:
       - name: Setup PHP
@@ -52,9 +54,6 @@ jobs:
           path: /home/runner/.composer/cache
           key: composer2-php:${{ matrix.php }}-sylius:${{ matrix.sylius }}-${{ github.sha }}
           restore-keys: composer2-php:${{ matrix.php }}-sylius:${{ matrix.sylius }}-
-
-      - name: Composer v2
-        run: sudo composer self-update --2
 
       - name: Composer Github Auth
         run: composer config -g github-oauth.github.com ${{ github.token }}
