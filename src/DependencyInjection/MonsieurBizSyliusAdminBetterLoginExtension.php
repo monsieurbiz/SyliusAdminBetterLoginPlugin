@@ -35,7 +35,7 @@ final class MonsieurBizSyliusAdminBetterLoginExtension extends Extension
         $container->setParameter('monsieurbiz_sylius_admin_better_login.tags', $config['tags']);
     }
 
-    public function getAlias()
+    public function getAlias(): string
     {
         return str_replace('monsieur_biz', 'monsieurbiz', parent::getAlias());
     }
