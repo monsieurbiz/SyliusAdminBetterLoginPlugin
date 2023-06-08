@@ -17,12 +17,9 @@ use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 
-class TagsExtention extends AbstractExtension
+class TagsExtension extends AbstractExtension
 {
-    /**
-     * @var ParameterBagInterface
-     */
-    private $parameterBag;
+    private ParameterBagInterface $parameterBag;
 
     public function __construct(ParameterBagInterface $parameterBag)
     {
