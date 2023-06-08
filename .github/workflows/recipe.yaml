@@ -80,6 +80,7 @@ jobs:
       - name: Setup some requirements
         working-directory: ./sylius
         run: |
+            composer config --no-plugins allow-plugins true
             composer config repositories.plugin '{"type": "path", "url": "../plugin/"}'
             composer config extra.symfony.allow-contrib true
             composer config secure-http false
@@ -88,7 +89,7 @@ jobs:
       - name: Require plugin without install
         working-directory: ./sylius
         run: |
-          composer require --no-install --no-update monsieurbiz/sylius-admin-better-login-plugin="*@dev"
+          composer require --no-install --no-scripts monsieurbiz/sylius-admin-better-login-plugin="*@dev"
 
       - name: Composer install
         working-directory: ./sylius
