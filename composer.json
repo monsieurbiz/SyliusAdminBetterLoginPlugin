@@ -5,8 +5,8 @@
     "description": "Improve the admin login form in Sylius. Let's make it fancy! 🎉",
     "license": "MIT",
     "require": {
-        "php": "~7.4|~8.0",
-        "sylius/sylius": ">=1.8 <1.12"
+        "php": "~7.4|~8.0|~8.1",
+        "sylius/sylius": ">=1.8 <1.13"
     },
     "require-dev": {
         "behat/behat": "^3.6.1",
@@ -28,19 +28,19 @@
         "mikey179/vfsstream": "^1.6",
         "mockery/mockery": "^1.4",
         "pamil/prophecy-common": "^0.1",
-        "phpspec/phpspec": "^6.1",
+        "phpspec/phpspec": "^6.1|^7.2",
         "phpstan/phpstan": "^0.12.57",
         "phpstan/phpstan-doctrine": "^0.12.19",
         "phpstan/phpstan-webmozart-assert": "^0.12.7",
-        "phpunit/phpunit": "^8.5",
+        "phpunit/phpunit": "^8.5 || ^9.5",
         "psalm/plugin-mockery": "^0.3",
         "psr/event-dispatcher": "^1.0",
-        "sylius-labs/coding-standard": "^3.1",
-        "symfony/browser-kit": "^4.4",
-        "symfony/debug-bundle": "^4.4",
-        "symfony/dotenv": "^4.4",
+        "sylius-labs/coding-standard": "^3.1 || ^4.2",
+        "symfony/browser-kit": "^4.4 || ^5.4 || ^6.0",
+        "symfony/debug-bundle": "^4.4 || ^5.4 || ^6.0",
+        "symfony/dotenv": "^4.4 || ^5.4 || ^6.0",
         "symfony/flex": "^1.7",
-        "symfony/web-profiler-bundle": "^4.4",
+        "symfony/web-profiler-bundle": "^4.4 || ^5.4 || ^6.0",
         "phpmd/phpmd": "@stable"
     },
     "prefer-stable": true,
@@ -61,11 +61,16 @@
         "phpspec": "phpspec run"
     },
     "extra": {
-        "symfony": {
-            "require": "^4.4"
-        },
         "branch-alias": {
             "dev-master": "1.0-dev"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "php-http/discovery": true,
+            "ergebnis/composer-normalize": true,
+            "symfony/flex": true
         }
     }
 }
