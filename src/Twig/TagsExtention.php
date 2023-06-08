@@ -13,20 +13,17 @@ declare(strict_types=1);
 
 namespace MonsieurBiz\SyliusAdminBetterLoginPlugin\Twig;
 
-use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 
 class TagsExtention extends AbstractExtension
 {
-    /**
-     * @var ContainerInterface
-     */
-    private $container;
+    private ParameterBagInterface $parameterBag;
 
-    public function __construct(ContainerInterface $container)
+    public function __construct(ParameterBagInterface $parameterBag)
     {
-        $this->container = $container;
+        $this->parameterBag = $parameterBag;
     }
 
     public function getFunctions(): array
@@ -38,6 +35,6 @@ class TagsExtention extends AbstractExtension
 
     public function getTags(): array
     {
-        return (array) $this->container->getParameter('monsieurbiz_sylius_admin_better_login.tags');
+        return (array) $this->parameterBag->get('monsieurbiz_sylius_admin_better_login.tags');
     }
 }
