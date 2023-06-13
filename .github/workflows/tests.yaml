@@ -14,7 +14,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php: ['8.0']
+        php: ['8.0', '8.1']
 
     env:
       SYMFONY_ARGS: --no-tls
@@ -23,20 +23,25 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
 
       - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: gd, intl, json
+
+      - name: Set project php-version
         run: |
-          sudo update-alternatives --set php /usr/bin/php${{ matrix.php }}
-          echo "date.timezone=UTC" | sudo tee /etc/php/${{ matrix.php }}/cli/conf.d/timezone.ini
           echo "${{ matrix.php }}" > .php-version
 
       - name: Install symfony CLI
         run: |
           curl https://get.symfony.com/cli/installer | bash
-          echo "${HOME}/.symfony/bin" >> $GITHUB_PATH
+          echo "${HOME}/.symfony5/bin" >> $GITHUB_PATH
 
       - uses: actions/cache@v1
         id: cache-composer
