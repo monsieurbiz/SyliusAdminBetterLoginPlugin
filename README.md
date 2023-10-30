@@ -1,21 +1,8 @@
-<p align="center">
-    <a href="https://monsieurbiz.com" target="_blank">
-        <img src="https://monsieurbiz.com/logo.png" width="250px" alt="Monsieur Biz logo" />
-    </a>
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="https://monsieurbiz.com/agence-web-experte-sylius" target="_blank">
-        <img src="https://demo.sylius.com/assets/shop/img/logo.png" width="200px" alt="Sylius logo" />
-    </a>
-    <br/>
-    <img src="https://monsieurbiz.com/assets/images/sylius_badge_extension-artisan.png" width="100" alt="Monsieur Biz is a Sylius Extension Artisan partner">
-</p>
+[![Banner of Sylius Admin Better Login plugin](docs/images/banner.jpg)](https://monsieurbiz.com/agence-web-experte-sylius)
 
 <h1 align="center">Admin Better Login</h1>
 
-[![Anti Admin Better Login license](https://img.shields.io/github/license/monsieurbiz/SyliusAdminBetterLoginPlugin?public)](https://github.com/monsieurbiz/SyliusAdminBetterLoginPlugin/blob/master/LICENSE.txt)
-[![Tests Status](https://img.shields.io/github/workflow/status/monsieurbiz/SyliusAdminBetterLoginPlugin/Tests?logo=github)](https://github.com/monsieurbiz/SyliusAdminBetterLoginPlugin/actions?query=workflow%3ATests)
-[![Security Status](https://img.shields.io/github/workflow/status/monsieurbiz/SyliusAdminBetterLoginPlugin/Security?label=security&logo=github)](https://github.com/monsieurbiz/SyliusAdminBetterLoginPlugin/actions?query=workflow%3ASecurity)
-
+[![Admin Better Login Plugin license](https://img.shields.io/github/license/monsieurbiz/SyliusAdminBetterLoginPlugin)](https://github.com/monsieurbiz/SyliusAdminBetterLoginPlugin/blob/master/LICENSE.txt) [![Tests](https://github.com/monsieurbiz/SyliusAdminBetterLoginPlugin/actions/workflows/tests.yaml/badge.svg)](https://github.com/monsieurbiz/SyliusAdminBetterLoginPlugin/actions/workflows/tests.yaml) [![Security](https://github.com/monsieurbiz/SyliusAdminBetterLoginPlugin/actions/workflows/security.yaml/badge.svg)](https://github.com/monsieurbiz/SyliusAdminBetterLoginPlugin/actions/workflows/security.yaml) [![Flex Recipe](https://github.com/monsieurbiz/SyliusAdminBetterLoginPlugin/actions/workflows/recipe.yaml/badge.svg)](https://github.com/monsieurbiz/SyliusAdminBetterLoginPlugin/actions/workflows/recipe.yaml)
 
 This plugin changes the way you log to your admin panel by adding a beautiful background
 and focusing on the username (or password) field.
