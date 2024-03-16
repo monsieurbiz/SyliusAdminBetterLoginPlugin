@@ -21,11 +21,7 @@
                 </div>
             {% endif %}
 
-            {{ form_row(form._username, {'value': last_username|default('')}) }}
-            {{ form_row(form._password) }}
-            {{ form_row(form._remember_me) }}
-            <input type="hidden" name="_csrf_admin_security_token" value="{{ csrf_token('admin_authenticate') }}">
-            <button type="submit" class="ui fluid large primary submit button">Login</button>
+            {{ sylius_template_event('sylius.admin.login.form.content', _context) }}
         </div>
 
         {{ sonata_block_render_event('sylius.admin.login.form', {'form': form}) }}
