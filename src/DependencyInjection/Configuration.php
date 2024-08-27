@@ -24,9 +24,9 @@ final class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder(): TreeBuilder
     {
         $treeBuilder = new TreeBuilder('monsieurbiz_sylius_admin_better_login');
-        $rootNode = method_exists($treeBuilder, 'getRootNode') ?
-            $treeBuilder->getRootNode() : $treeBuilder->root('monsieurbiz_sylius_admin_better_login');
+        $rootNode = $treeBuilder->getRootNode();
 
+        /** @phpstan-ignore-next-line */
         $rootNode
             ->children()
                 ->arrayNode('tags')

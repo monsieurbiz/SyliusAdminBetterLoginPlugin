@@ -84,4 +84,4 @@ jobs:
       - name: Require plugin & install all dependencies
         working-directory: ./sylius
         run: |
-          monsieurbiz/sylius-admin-better-login-plugin="*@dev"
+            composer require monsieurbiz/sylius-admin-better-login-plugin="*@dev"
