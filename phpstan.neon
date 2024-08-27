@@ -1,18 +1,15 @@
-includes:
-    - vendor/phpstan/phpstan-doctrine/extension.neon
-    - vendor/phpstan/phpstan-webmozart-assert/extension.neon
-
 parameters:
-    level: max
+    level: 8
     paths:
         - %rootDir%/src/
 
-    checkMissingIterableValueType: false
-
-    excludes_analyse:
+    excludePaths:
         # Makes PHPStan crash
-        - 'src/DependencyInjection/Configuration.php'
         - 'src/DependencyInjection/MonsieurBizSyliusAdminBetterLoginExtension.php'
 
         # Test dependencies
         - 'tests/Application/**/*'
+
+    ignoreErrors:
+        # - identifier: missingType.generics
+        - identifier: missingType.iterableValue

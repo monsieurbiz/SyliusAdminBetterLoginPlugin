@@ -1,8 +1,11 @@
 [![Banner of Sylius Admin Better Login plugin](docs/images/banner.jpg)](https://monsieurbiz.com/agence-web-experte-sylius)
 
-<h1 align="center">Admin Better Login</h1>
+<h1 align="center">Sylius Admin Better Login</h1>
 
-[![Admin Better Login Plugin license](https://img.shields.io/github/license/monsieurbiz/SyliusAdminBetterLoginPlugin)](https://github.com/monsieurbiz/SyliusAdminBetterLoginPlugin/blob/master/LICENSE.txt) [![Tests](https://github.com/monsieurbiz/SyliusAdminBetterLoginPlugin/actions/workflows/tests.yaml/badge.svg)](https://github.com/monsieurbiz/SyliusAdminBetterLoginPlugin/actions/workflows/tests.yaml) [![Security](https://github.com/monsieurbiz/SyliusAdminBetterLoginPlugin/actions/workflows/security.yaml/badge.svg)](https://github.com/monsieurbiz/SyliusAdminBetterLoginPlugin/actions/workflows/security.yaml) [![Flex Recipe](https://github.com/monsieurbiz/SyliusAdminBetterLoginPlugin/actions/workflows/recipe.yaml/badge.svg)](https://github.com/monsieurbiz/SyliusAdminBetterLoginPlugin/actions/workflows/recipe.yaml)
+[![Admin Better Login Plugin license](https://img.shields.io/github/license/monsieurbiz/SyliusAdminBetterLoginPlugin?public)](https://github.com/monsieurbiz/SyliusAdminBetterLoginPlugin/blob/master/LICENSE.txt)
+[![Tests Status](https://img.shields.io/github/actions/workflow/status/monsieurbiz/SyliusAdminBetterLoginPlugin/tests.yaml?branch=master&logo=github)](https://github.com/monsieurbiz/SyliusAdminBetterLoginPlugin/actions?query=workflow%3ATests)
+[![Recipe Status](https://img.shields.io/github/actions/workflow/status/monsieurbiz/SyliusAdminBetterLoginPlugin/recipe.yaml?branch=master&label=recipes&logo=github)](https://github.com/monsieurbiz/SyliusAdminBetterLoginPlugin/actions?query=workflow%3ASecurity)
+[![Security Status](https://img.shields.io/github/actions/workflow/status/monsieurbiz/SyliusAdminBetterLoginPlugin/security.yaml?branch=master&label=security&logo=github)](https://github.com/monsieurbiz/SyliusAdminBetterLoginPlugin/actions?query=workflow%3ASecurity)
 
 This plugin changes the way you log to your admin panel by adding a beautiful background
 and focusing on the username (or password) field.
@@ -12,7 +15,21 @@ Thank you to all the authors.
 
 ![](screenshot.png)
 
+## Compatibility
+
+| Sylius Version | PHP Version |
+|---|---|
+| 1.11 | 8.0 - 8.1 |
+| 1.12 | 8.1 - 8.2 |
+| 1.13 | 8.1 - 8.2 |
+
 ## Installation
+
+If you want to use our recipes, you can configure your composer.json by running:
+
+```bash
+composer config --no-plugins --json extra.symfony.endpoint '["https://api.github.com/repos/monsieurbiz/symfony-recipes/contents/index.json?ref=flex/master","flex://defaults"]'
+```
 
 ```bash
 composer require monsieurbiz/sylius-admin-better-login-plugin

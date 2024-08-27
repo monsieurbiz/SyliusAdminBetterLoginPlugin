@@ -1,13 +1,15 @@
 .DEFAULT_GOAL := help
 SHELL=/bin/bash
 APP_DIR=tests/Application
-SYLIUS_VERSION=1.12.0
+SYLIUS_VERSION=1.13.0
 SYMFONY=cd ${APP_DIR} && symfony
 COMPOSER=symfony composer
 CONSOLE=${SYMFONY} console
 export COMPOSE_PROJECT_NAME=admin-better-login
+export MIGRATIONS_NAMESPACE=MonsieurBiz\\SyliusAdminBetterLoginPlugin\\Migrations
+export USER_UID=$(shell id -u)
 PLUGIN_NAME=sylius-${COMPOSE_PROJECT_NAME}-plugin
-COMPOSE=docker-compose
+COMPOSE=docker compose
 YARN=yarn
 
 ###
@@ -69,18 +71,22 @@ setup_application:
 	(cd ${APP_DIR} && ${COMPOSER} config repositories.plugin '{"type": "path", "url": "../../"}')
 	(cd ${APP_DIR} && ${COMPOSER} config extra.symfony.allow-contrib true)
 	(cd ${APP_DIR} && ${COMPOSER} config minimum-stability dev)
+	(cd ${APP_DIR} && ${COMPOSER} config --no-plugins allow-plugins true)
+	(cd ${APP_DIR} && ${COMPOSER} config --no-plugins --json extra.symfony.endpoint '["https://api.github.com/repos/monsieurbiz/symfony-recipes/contents/index.json?ref=flex/master","flex://defaults"]')
 	(cd ${APP_DIR} && ${COMPOSER} require --no-install --no-scripts --no-progress sylius/sylius="~${SYLIUS_VERSION}") # Make sure to install the required version of sylius because the sylius-standard has a soft constraint
 	$(MAKE) ${APP_DIR}/.php-version
 	$(MAKE) ${APP_DIR}/php.ini
 	(cd ${APP_DIR} && ${COMPOSER} install --no-interaction)
 	$(MAKE) apply_dist
-	(cd ${APP_DIR} && ${COMPOSER} require --no-progress monsieurbiz/${PLUGIN_NAME}="*@dev")
+	(cd ${APP_DIR} && ${COMPOSER} require --no-progress --no-interaction monsieurbiz/${PLUGIN_NAME}="*@dev")
 	rm -rf ${APP_DIR}/var/cache
 
 
 ${APP_DIR}/docker-compose.yaml:
 	rm -f ${APP_DIR}/docker-compose.yml
 	rm -f ${APP_DIR}/docker-compose.yaml
+	rm -f ${APP_DIR}/compose.yml # Remove Sylius file about Docker
+	rm -f ${APP_DIR}/compose.override.dist.yml # Remove Sylius file about Docker
 	ln -s ../../docker-compose.yaml.dist ${APP_DIR}/docker-compose.yaml
 .PHONY: ${APP_DIR}/docker-compose.yaml
 
@@ -132,7 +138,7 @@ test.container: ## Lint the symfony container
 	${CONSOLE} lint:container
 
 test.yaml: ## Lint the symfony Yaml files
-	${CONSOLE} lint:yaml ../../recipes ../../src/Resources/config
+	${CONSOLE} lint:yaml ../../src/Resources/config --parse-tags
 
 test.schema: ## Validate MySQL Schema
 	${CONSOLE} doctrine:schema:validate
@@ -162,6 +168,9 @@ sylius.assets: ## Install all assets with symlinks
 
 messenger.setup: ## Setup Messenger transports
 	${CONSOLE} messenger:setup-transports
+
+doctrine.diff: ## Doctrine diff
+	${CONSOLE} doctrine:migration:diff --namespace="${MIGRATIONS_NAMESPACE}"
 
 ###
 ### PLATFORM
