@@ -1,3 +1,5 @@
+# ⚠️ This plugin is depracated due to a limitation of Unsplash API. Please use [monsieurbiz/SyliusBetterAdminPlugin](https://github.com/monsieurbiz/SyliusBetterAdminPlugin) instead.
+
 [![Banner of Sylius Admin Better Login plugin](docs/images/banner.jpg)](https://monsieurbiz.com/agence-web-experte-sylius)
 
 <h1 align="center">Sylius Admin Better Login</h1>
